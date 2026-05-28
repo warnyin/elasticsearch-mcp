@@ -1,0 +1,59 @@
+{
+  "name": "@warnyin/elasticsearch-mcp",
+  "version": "0.1.0",
+  "description": "MCP server to manage SQL queries on Elasticsearch via its REST API",
+  "license": "MIT",
+  "author": "warnyin",
+  "homepage": "https://github.com/warnyin/elasticsearch-mcp",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/warnyin/elasticsearch-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/warnyin/elasticsearch-mcp/issues"
+  },
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "elasticsearch-mcp": "dist/index.js",
+    "warnyin-elasticsearch-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "elasticsearch",
+    "sql",
+    "elastic",
+    "search",
+    "warnyin",
+    "claude",
+    "llm",
+    "ai"
+  ],
+  "scripts": {
+    "build": "tsc && node -e \"import('node:fs').then(fs=>fs.chmodSync('dist/index.js',0o755))\"",
+    "prepublishOnly": "npm run build",
+    "start": "node dist/index.js",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "undici": "^6.21.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "typescript": "^5.5.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
